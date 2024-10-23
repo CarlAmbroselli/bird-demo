@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Generate Your Own Game</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body
+        class="flex flex-col justify-center items-center min-h-screen"
+        style="
+            background: linear-gradient(to bottom, #ab6770, #b27160) no-repeat
+                fixed;
+        "
+    >
+        <img
+            src="https://ai.gov.ae/wp-content/uploads/2024/10/Logo-BK-BG-white-2.svg"
+            alt="AI.AE Logo"
+            class="w-[300px] mb-8 mt-16"
+        />
+        <div class="p-4 w-full max-w-md mx-auto text-white">
+            <header class="text-center mb-4">
+                <h1 class="text-xl font-bold">
+                    Use AI to generate your own game!
+                </h1>
+                <p class="text-sm pt-4">
+                    Today, writing software can be as easy as telling an AI what
+                    to generate for you! To show you how easy it is, let's build
+                    a customized UAE-designed birds game!
+                </p>
+            </header>
+
+            <section
+                class="bg-white text-gray-900 p-4 rounded-lg shadow-lg mb-6"
+            >
+                <div class="mt-4 p-4 border-2 border-gray-300 rounded-lg">
+                    <p class="text-center text-sm font-semibold">
+                        Generate a retro game with a yellow bird flying through
+                        pipes, which jumps when I tap the screen. The goal
+                        should be to move forward without touching the pipes.
+                    </p>
+                </div>
+                <button
+                    class="mt-8 bg-yellow-400 hover:bg-yellow-500 text-white py-2 px-4 rounded-full w-full"
+                >
+                    Run your AI
+                </button>
+
+                <p class="text-center text-sm font-semibold mt-2">RESULT:</p>
+                <div class="mt-4 iframe-container-one">
+                    <div style="width: 100%; overflow: hidden">
+                        <iframe
+                            src="https://aaarafat.github.io/JS-Flappy-Bird/index.html"
+                            width="276"
+                            height="414"
+                            style="
+                                transform: scale(1);
+                                transform-origin: 0 0;
+                                pointer-events: auto;
+                            "
+                            scrolling="no"
+                            frameborder="0"
+                        >
+                        </iframe>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-white text-gray-900 p-4 rounded-lg shadow-lg">
+                <h2 class="text-lg font-bold mb-2">
+                    Let's change the obstacles!
+                </h2>
+                <p class="text-sm mb-4">
+                    Instead of boring pipes, let's make the obstacles that our
+                    bird wants to jump through famous buildings in the UAE!
+                </p>
+                <button
+                    class="bg-yellow-400 hover:bg-yellow-500 text-white py-2 px-4 rounded-full w-full"
+                >
+                    Run your AI
+                </button>
+
+                <div class="mt-4 p-4 border-2 border-gray-300 rounded-lg">
+                    <p class="text-center text-sm font-semibold">
+                        Change the pipes to Burj Khalifa, Burj Al Arab, Cayan
+                        Tower, and Jumeirah Beach Hotel instead.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </body>
+    <script>
+        function updateIframeScale() {
+            const container = document.querySelector(".iframe-container-one");
+            const iframe = container.querySelector("iframe");
+            const scale = container.offsetWidth / iframe.width;
+            iframe.style.transform = `scale(${scale})`;
+        }
+        window.addEventListener("load", updateIframeScale);
+        window.addEventListener("resize", updateIframeScale);
+    </script>
+</html>
